@@ -1,3 +1,5 @@
+<%= render "shared/partialheader" %>
+
 <h3>登録スケジュール一覧</h3>
 
 <% if flash[:notice] %>
@@ -24,19 +26,27 @@
       <tr>
         <td><%= task.id %></td>
         <td><%= task.title %></td>
-        <td><%= task.startdate %></td>
-        <td><%= task.enddate %></td>
+        <td><%= task.startdate.strftime('%Y年%m月%d日') %></td>
+        <td><%= task.enddate.strftime('%Y年%m月%d日')%></td>
         <td>
           <%= "○" if task.wholeday == true%>
           <%= "" if task.wholeday == false%>
         </td>
-        <td><%= task.updated_at %></td>
-        <td><%= "実装予定" %></td>
-        <td><%= "実装予定" %></td>
-        <td><%= "実装予定" %></td>
+        <td><%= task.updated_at.to_s(:datetime_jp) %></td>
+        <td>
+        <%= link_to "参照", task %>
+        </td>
+        <td>
+        <%= link_to "編集", [:edit, task] %>
+        </td>
+        <td>
+        <%= link_to "削除", task, data: {turbo_method: :delete, turbo_confirm: "本当に削除しますか？"} %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <p><%= link_to "スケジュール新規登録", :new_task %></p>
+
+<%= render "shared/partialfooter" %>

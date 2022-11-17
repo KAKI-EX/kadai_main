@@ -1,0 +1,30 @@
+<h3>スケジュール詳細</h3>
+
+<table>
+  <tr>
+    <th>タイトル</th>
+    <td><%= @task.title %></td>
+  </tr>
+  <tr>
+    <th>開始日</th>
+    <td><%= @task.startdate %></td>
+  </tr>
+  <tr>
+    <th>終了日</th>
+    <td><%= @task.enddate %></td>
+  </tr>
+  <tr>
+    <th>終日</th>
+    <td><%= @task.wholeday %></td>
+  </tr>
+  <tr>
+  <th>メモ</th>
+  <td><%= @task.memo %></td>
+</tr>
+</table>
+
+<div>
+  <ul>
+    <li><%= link_to "スケジュール一覧に戻る", :tasks %></li>
+  </ul>
+</div>
