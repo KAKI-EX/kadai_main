@@ -1,9 +1,13 @@
+<header>
+<%= render "shared/partialheader" %>
+</header>
 
 <h3>登録済みスケジュールの編集</h3>
 
 <%= render "shared/error", obj: @task %>
 
 <%= form_with model: @task do |f| %>
+  <div class = edit_table>
   <table>
     <tr>
       <th><%= f.label :title ,"タイトル" %></th>
@@ -19,18 +23,23 @@
     </tr>
     <tr>
       <th><%= f.label :wholeday ,"終日" %></th>
-      <td><%= f.check_box :wholeday %></td>
+      <td><%= f.check_box :wholeday %><br>終日予定の場合はチェックを入れてください。</td>
     </tr>
     <tr>
     <th><%= f.label :memo ,"メモ" %></th>
-    <td><%= f.text_area :memo %></td>
+    <td><%= f.text_area :memo %> </td>
   </tr>
   </table>
 
   <div>
-    <ul>
-      <li><%= f.submit "編集を完了する" %></li>
+    <ul class="edit_li">
+      <li class="edit_input"><%= f.submit "編集を完了する" %></li>
       <li><%= link_to "スケジュール一覧に戻る", :tasks %></li>
     </ul>
   </div>
+  </div>
 <% end %>
+
+<footer>
+<%= render "shared/partialfooter2" %>
+</footer>

@@ -1,11 +1,18 @@
+<header>
 <%= render "shared/partialheader" %>
+</header>
 
 <h3>登録スケジュール一覧</h3>
 
 <% if flash[:notice] %>
-<p class="notice"><%= flash[:notice] %></p>
+<p class="success"><%= flash[:notice] %></p>
 <% end %>
 
+<% if flash[:alert] %>
+<p class="fail"><%= flash[:alert] %></p>
+<% end %>
+
+<div class = "index_table">
 <table>
   <thead>
     <tr>
@@ -46,7 +53,10 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
-<p><%= link_to "スケジュール新規登録", :new_task %></p>
+<p class = "newregister"><%= link_to "スケジュール新規登録", :new_task %></p>
 
+<footer>
 <%= render "shared/partialfooter" %>
+</footer>

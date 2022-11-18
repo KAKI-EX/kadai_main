@@ -1,10 +1,13 @@
+<header>
+  <%= render "shared/partialheader" %>
+</header>
 
 <h3>スケジュール新規作成</h3>
 
 <%= render "shared/error", obj: @task %>
 
 <%= form_with model: @task do |f| %>
-  <table>
+  <table class = "new_table">
     <tr>
       <th><%= f.label :title ,"タイトル" %></th>
       <td><%= f.text_field :title %></td>
@@ -22,20 +25,22 @@
 
     <tr>
       <th><%= f.label :wholeday ,"終日" %></th>
-      <td><%= f.check_box :wholeday %></td>
+      <td><%= f.check_box :wholeday %><br>終日予定の場合はチェックを入れてください。</td>
     </tr>
 
     <tr>
-    <th><%= f.label :memo ,"スケジュールメモ" %></th>
-    <td><%= f.text_area :memo %></td>
+      <th><%= f.label :memo ,"スケジュールメモ" %></th>
+      <td><%= f.text_area :memo %></td>
     </tr>
 
   </table>
 
-  <div>
-    <ul>
+    <ul class="new_li">
       <li><%= f.submit "登録完了する"%></li>
       <li><%= link_to "スケジュール一覧に戻る", :tasks %></li>
     </ul>
-  </div>
 <% end %>
+
+<footer>
+  <%= render "shared/partialfooter2" %>
+</footer>

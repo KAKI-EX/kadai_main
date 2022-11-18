@@ -2,6 +2,12 @@
   margin:0px;
 }
 
+h3{
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .partialheader, .partialfooter {
   width: 100%;
   padding: 10px;
@@ -11,17 +17,120 @@
   font-size: 40px;
 }
 
-table th {
-  background-color: #fbc25b;
-  padding: 10px 20px;
+.partialfooter{
+  position: absolute;
+  bottom:0px;
 }
 
-table td {
-  background-color: #f9ecd5;
+.index_table  th {
+  background-color: #000000;
+  padding: 10px 20px;
+  color: white;
+}
+
+.index_table table td {
+  text-align: center;
+  background-color: #aaaaaa;
   padding: 10px 20px;
 }
 
 .notice {
   background-color: #ccf;
   padding: 5px;
+}
+
+.edit_table th,.show_table th,.new_table th {
+  background-color: #000000;
+  padding: 10px 20px;
+  color: white;
+}
+
+.edit_table td,.show_table td,.new_table td {
+  text-align: center;
+  background-color: #aaaaaa;
+  padding: 10px 20px;
+  width: 400px;
+}
+
+#task_memo{
+  font-size: 23px;
+  height: 200px;
+  width: 100%;
+}
+
+#task_title,#task_startdate,#task_enddate,.show_table{
+  font-size: 23px;
+  height: 30px;
+  width: 100%;
+}
+
+.edit_li,.show_li ul,.new_li{
+  list-style:none;
+  font-size: 20px;
+}
+
+.edit_input,.show_li ul.new_li ul{
+  height: 30px;
+  margin-top:20px;
+  padding-bottom: 5px;
+}
+
+.index_table{
+  font-size: 23px;
+}
+
+.newregister{
+  margin-top: 7px;
+  font-size: 23px;
+}
+
+.fail{
+  font-size: 23px;
+  text-align: center;
+  height: 50px;
+  width: 500px;
+  background-color: #ec98ac8f;
+  border: 2px solid #ec7592;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+p.fail{
+  padding-top: 13px;
+}
+
+.success{
+  font-size: 23px;
+  text-align: center;
+  height: 50px;
+  width: 500px;
+  background-color: #98ecaa7a;
+  border: 2px solid #5cd075;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+p.success{
+  padding-top: 13px;
+}
+
+.error{
+  font-size: 23px;
+  text-align: center;
+  height: 50px;
+  width: 500px;
+  background-color: #ec98ac8f;
+  border: 2px solid #ec7592;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+.error{
+  padding-top: 13px;
+}
+
+.error_message{
+  font-size: 23px;
+  margin-left: 30px;
+  margin-bottom: 10px;
 }

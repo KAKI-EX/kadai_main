@@ -10,7 +10,7 @@ class Task < ApplicationRecord
 
   def startdate_when_over_the_enddate
     if startdate != nil? && enddate != nil && startdate > enddate
-      errors.add(:startdate,"が終了日以降に設定されています")  
+      errors.add(:startdate,"または終了日に誤りがあります。")  
     end
   end
 end

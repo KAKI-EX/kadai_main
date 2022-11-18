@@ -1,5 +1,10 @@
+<header>
+  <%= render "shared/partialheader" %>
+</header>
+
 <h3>スケジュール詳細</h3>
 
+<div class = "show_table">
 <table>
   <tr>
     <th>タイトル</th>
@@ -7,15 +12,18 @@
   </tr>
   <tr>
     <th>開始日</th>
-    <td><%= @task.startdate %></td>
+    <td><%= @task.startdate.strftime('%Y年%m月%d日') %></td>
   </tr>
   <tr>
     <th>終了日</th>
-    <td><%= @task.enddate %></td>
+    <td><%= @task.enddate.strftime('%Y年%m月%d日') %></td>
   </tr>
   <tr>
     <th>終日</th>
-    <td><%= @task.wholeday %></td>
+    <td>
+      <%= "○" if @task.wholeday == true %>
+      <%= "" if @task.wholeday == false %>
+    </td>
   </tr>
   <tr>
   <th>メモ</th>
@@ -23,8 +31,18 @@
 </tr>
 </table>
 
-<div>
+<div class="show_li">
   <ul>
     <li><%= link_to "スケジュール一覧に戻る", :tasks %></li>
   </ul>
+  <ul>
+    <li><%= link_to "スケジュールを編集する",edit_task_path(@task)  %></li>
+  </ul>
+  <ul>
+    <li><%= link_to "スケジュールを削除する", @task, data: {turbo_method: :delete, turbo_confirm: "本当に削除しますか？"} %></li>
+  </ul>
 </div>
+
+<footer>
+  <%= render "shared/partialfooter2" %>
+</footer>
