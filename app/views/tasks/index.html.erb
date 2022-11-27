@@ -5,11 +5,11 @@
 <h3>登録スケジュール一覧</h3>
 
 <% if flash[:notice] %>
-<p class="success"><%= flash[:notice] %></p>
+  <p class="success"><%= flash[:notice] %></p>
 <% end %>
 
 <% if flash[:alert] %>
-<p class="fail"><%= flash[:alert] %></p>
+  <p class="fail"><%= flash[:alert] %></p>
 <% end %>
 
 <div class = "index_table">
@@ -36,8 +36,9 @@
         <td><%= task.startdate.strftime('%Y年%m月%d日') %></td>
         <td><%= task.enddate.strftime('%Y年%m月%d日')%></td>
         <td>
-          <%= "○" if task.wholeday == true%>
-          <%= "" if task.wholeday == false%>
+          <% if task.wholeday %>
+            ○
+          <% end %>
         </td>
         <td><%= task.updated_at.to_s(:datetime_jp) %></td>
         <td>
